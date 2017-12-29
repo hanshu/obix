@@ -1,0 +1,1030 @@
+{
+	"variables": [],
+	"info": {
+		"name": "obix",
+		"_postman_id": "a2f2b46e-6390-c9cb-a9bf-a6713a74bec6",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "watch",
+			"description": "describes how to create one Watch, modify the least time, add objects for changes, and poll for changes",
+			"item": [
+				{
+					"name": "defaultLeaseTime",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "admin",
+								"password": "Admin12345",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"url": "http://localhost/obix/watchService/defaultLeaseTime/",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic YWRtaW46QWRtaW4xMjM0NQ==",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<reltime val=\"PT10M\" />"
+						},
+						"description": "globally update the default least time for watchService "
+					},
+					"response": []
+				},
+				{
+					"name": "watch",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "admin",
+								"password": "Admin12345",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"url": "http://localhost/obix/watchService/make/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Transfer-Encoding",
+								"value": "chunked",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic YWRtaW46QWRtaW4xMjM0NQ==",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "create the watch"
+					},
+					"response": []
+				},
+				{
+					"name": "lease time",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "admin",
+								"password": "Admin12345",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"url": "http://localhost/obix/watchService/watch121/lease/",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic YWRtaW46QWRtaW4xMjM0NQ==",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<real val=\"600000\" />"
+						},
+						"description": "update the individual watch lease time"
+					},
+					"response": []
+				},
+				{
+					"name": "add",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "admin",
+								"password": "Admin12345",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"url": "http://localhost/obix/watchService/watch32/add/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Transfer-Encoding",
+								"value": "chunked",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic YWRtaW46QWRtaW4xMjM0NQ==",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/xml",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<obj is=\"obix:WatchIn\">\r\n  <list names=\"hrefs\">\r\n    <uri val=\"/obix/config/examples/BooleanWritable/\" />\r\n    <uri val=\"/obix/config/examples/NumericWritable/\" />\r\n    <uri val=\"/obix/config/examples/StringWritable/\" />\r\n    <uri val=\"/obix/config/examples/EnumWritable/\" />\r\n  </list>\r\n</obj>"
+						},
+						"description": "add points to a Watch"
+					},
+					"response": []
+				},
+				{
+					"name": "remove",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "admin",
+								"password": "Admin12345",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"url": "http://localhost/obix/watchService/watch32/remove/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Transfer-Encoding",
+								"value": "chunked",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic YWRtaW46QWRtaW4xMjM0NQ==",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/xml",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<obj is=\"obix:WatchIn\">\r\n  <list names=\"hrefs\">\r\n    <uri val=\"/obix/config/examples/BooleanWritable/\" />\r\n  </list>\r\n</obj>"
+						},
+						"description": "remove points from a Watch"
+					},
+					"response": [
+						{
+							"id": "e4a51924-9e04-41c6-8613-532a8a0e7c90",
+							"name": "remove",
+							"originalRequest": {
+								"url": "http://localhost/obix/watchService/watch32/remove/",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Transfer-Encoding",
+										"value": "chunked",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"name": "Authorization",
+										"value": "Basic YWRtaW46QWRtaW4xMjM0NQ==",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/xml",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "<obj is=\"obix:WatchIn\">\r\n  <list names=\"hrefs\">\r\n    <uri val=\"/obix/config/examples/BooleanWritable/\" />\r\n  </list>\r\n</obj>"
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "xml",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"name": "accept-language",
+									"key": "accept-language",
+									"value": "en-US,en;q=0.8,zh-CN;q=0.6,zh;q=0.4",
+									"description": "Custom header"
+								},
+								{
+									"name": "cache-control",
+									"key": "cache-control",
+									"value": "private, must-revalidate",
+									"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+								},
+								{
+									"name": "content-encoding",
+									"key": "content-encoding",
+									"value": "gzip",
+									"description": "The type of encoding used on the data."
+								},
+								{
+									"name": "content-type",
+									"key": "content-type",
+									"value": "text/xml; charset=UTF-8",
+									"description": "The mime type of this content"
+								},
+								{
+									"name": "date",
+									"key": "date",
+									"value": "Tue, 26 Sep 2017 08:01:14 GMT",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"name": "expires",
+									"key": "expires",
+									"value": "Thu, 01 Jan 1970 00:00:00 GMT",
+									"description": "Gives the date/time after which the response is considered stale"
+								},
+								{
+									"name": "server",
+									"key": "server",
+									"value": "Niagara Web Server/3.8.111",
+									"description": "A name for the server"
+								},
+								{
+									"name": "transfer-encoding",
+									"key": "transfer-encoding",
+									"value": "chunked",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"name": "x-frame-options",
+									"key": "x-frame-options",
+									"value": "sameorigin",
+									"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date",
+									"hostOnly": true,
+									"httpOnly": false,
+									"domain": "localhost",
+									"path": "/",
+									"secure": false,
+									"session": true,
+									"value": "false",
+									"key": "niagara_login_state_data"
+								},
+								{
+									"expires": "Invalid Date",
+									"hostOnly": true,
+									"httpOnly": false,
+									"domain": "localhost",
+									"path": "/",
+									"secure": false,
+									"session": true,
+									"value": "systemAdmin",
+									"key": "vrf_user_type"
+								},
+								{
+									"expires": "Invalid Date",
+									"hostOnly": true,
+									"httpOnly": false,
+									"domain": "localhost",
+									"path": "/",
+									"secure": false,
+									"session": true,
+									"value": "en",
+									"key": "vrf_user_locale"
+								},
+								{
+									"expires": "Invalid Date",
+									"hostOnly": true,
+									"httpOnly": false,
+									"domain": "localhost",
+									"path": "/",
+									"secure": false,
+									"session": true,
+									"value": "s4d5af52f819635e4ec08f45d233e7f694f34289f2dbf3b4c68",
+									"key": "niagara_session"
+								}
+							],
+							"responseTime": 38,
+							"body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<?xml-stylesheet type='text/xsl' href='/obix/xsl'?>\n<obj null=\"true\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://obix.org/ns/schema/1.0 /obix/xsd\" xmlns=\"http://obix.org/ns/schema/1.0\"/>\n"
+						}
+					]
+				},
+				{
+					"name": "pollChanges",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "admin",
+								"password": "Admin12345",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"url": "http://localhost/obix/watchService/watch32/pollChanges/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Transfer-Encoding",
+								"value": "chunked",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic YWRtaW46QWRtaW4xMjM0NQ==",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/xml",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "pollChange"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "point",
+			"description": "illustrates how to retrieve object info, invoke the operation",
+			"item": [
+				{
+					"name": "set numericwritable",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "admin",
+								"password": "Admin12345",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"url": "http://localhost/obix/config/examples/NumericWritable/set/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Transfer-Encoding",
+								"value": "chunked",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic YWRtaW46QWRtaW4xMjM0NQ==",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/xml",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<real val=\"12.45\" />"
+						},
+						"description": "set point"
+					},
+					"response": [
+						{
+							"id": "d5736ee6-9037-4b4d-a62b-d96723240593",
+							"name": "set",
+							"originalRequest": {
+								"url": "http://localhost/obix/config/examples/NumericWritable/set/",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Transfer-Encoding",
+										"value": "chunked",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"name": "Authorization",
+										"value": "Basic YWRtaW46QWRtaW4xMjM0NQ==",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/xml",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "<real val=\"12.45\" />"
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "xml",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"name": "accept-language",
+									"key": "accept-language",
+									"value": "en-US,en;q=0.8,zh-CN;q=0.6,zh;q=0.4",
+									"description": "Custom header"
+								},
+								{
+									"name": "cache-control",
+									"key": "cache-control",
+									"value": "private, must-revalidate",
+									"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+								},
+								{
+									"name": "content-encoding",
+									"key": "content-encoding",
+									"value": "gzip",
+									"description": "The type of encoding used on the data."
+								},
+								{
+									"name": "content-type",
+									"key": "content-type",
+									"value": "text/xml; charset=UTF-8",
+									"description": "The mime type of this content"
+								},
+								{
+									"name": "date",
+									"key": "date",
+									"value": "Tue, 26 Sep 2017 08:10:49 GMT",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"name": "expires",
+									"key": "expires",
+									"value": "Thu, 01 Jan 1970 00:00:00 GMT",
+									"description": "Gives the date/time after which the response is considered stale"
+								},
+								{
+									"name": "server",
+									"key": "server",
+									"value": "Niagara Web Server/3.8.111",
+									"description": "A name for the server"
+								},
+								{
+									"name": "transfer-encoding",
+									"key": "transfer-encoding",
+									"value": "chunked",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"name": "x-frame-options",
+									"key": "x-frame-options",
+									"value": "sameorigin",
+									"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date",
+									"hostOnly": true,
+									"httpOnly": false,
+									"domain": "localhost",
+									"path": "/",
+									"secure": false,
+									"session": true,
+									"value": "false",
+									"key": "niagara_login_state_data"
+								},
+								{
+									"expires": "Invalid Date",
+									"hostOnly": true,
+									"httpOnly": false,
+									"domain": "localhost",
+									"path": "/",
+									"secure": false,
+									"session": true,
+									"value": "systemAdmin",
+									"key": "vrf_user_type"
+								},
+								{
+									"expires": "Invalid Date",
+									"hostOnly": true,
+									"httpOnly": false,
+									"domain": "localhost",
+									"path": "/",
+									"secure": false,
+									"session": true,
+									"value": "en",
+									"key": "vrf_user_locale"
+								},
+								{
+									"expires": "Invalid Date",
+									"hostOnly": true,
+									"httpOnly": false,
+									"domain": "localhost",
+									"path": "/",
+									"secure": false,
+									"session": true,
+									"value": "s4d5af52f819635e4ec08f45d233e7f694f34289f2dbf3b4c68",
+									"key": "niagara_session"
+								}
+							],
+							"responseTime": 57,
+							"body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<?xml-stylesheet type='text/xsl' href='/obix/xsl'?>\n<real val=\"12.45\" is=\"/obix/def/control:NumericWritable /obix/def/control:NumericPoint obix:Point\" display=\"12.4 {ok} @ def\" icon=\"/ord?module://icons/x16/control/numericPoint.png\" unit=\"obix:units/null\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://obix.org/ns/schema/1.0 /obix/xsd\" xmlns=\"http://obix.org/ns/schema/1.0\">\n <str name=\"facets\" val=\"units=u:null;;;;|precision=i:1|min=d:-inf|max=d:+inf\" href=\"facets/\" display=\"units=null,precision=1,min=-inf,max=+inf\" displayName=\"Facets\" writable=\"true\"/>\n <ref name=\"proxyExt\" href=\"proxyExt/\" is=\"/obix/def/control:NullProxyExt\" null=\"true\" display=\"null\" displayName=\"Proxy Ext\" icon=\"/ord?module://icons/x16/control/controlExtension.png\"/>\n <real name=\"out\" val=\"12.45\" href=\"out/\" is=\"/obix/def/baja:StatusNumeric\" display=\"12.4 {ok} @ def\" displayName=\"Out\" icon=\"/ord?module://icons/x16/statusNumeric.png\" unit=\"obix:units/null\">\n </real>\n <real name=\"in1\" val=\"0.0\" href=\"in1/\" is=\"/obix/def/baja:StatusNumeric\" null=\"true\" display=\"- {null}\" displayName=\"In1\" icon=\"/ord?module://icons/x16/statusNumeric.png\" unit=\"obix:units/null\">\n </real>\n <real name=\"in2\" val=\"0.0\" href=\"in2/\" is=\"/obix/def/baja:StatusNumeric\" null=\"true\" display=\"- {null}\" displayName=\"In2\" icon=\"/ord?module://icons/x16/statusNumeric.png\" unit=\"obix:units/null\">\n </real>\n <real name=\"in3\" val=\"0.0\" href=\"in3/\" is=\"/obix/def/baja:StatusNumeric\" null=\"true\" display=\"- {null}\" displayName=\"In3\" icon=\"/ord?module://icons/x16/statusNumeric.png\" unit=\"obix:units/null\">\n </real>\n <real name=\"in4\" val=\"0.0\" href=\"in4/\" is=\"/obix/def/baja:StatusNumeric\" null=\"true\" display=\"- {null}\" displayName=\"In4\" icon=\"/ord?module://icons/x16/statusNumeric.png\" unit=\"obix:units/null\">\n </real>\n <real name=\"in5\" val=\"0.0\" href=\"in5/\" is=\"/obix/def/baja:StatusNumeric\" null=\"true\" display=\"- {null}\" displayName=\"In5\" icon=\"/ord?module://icons/x16/statusNumeric.png\" unit=\"obix:units/null\">\n </real>\n <real name=\"in6\" val=\"0.0\" href=\"in6/\" is=\"/obix/def/baja:StatusNumeric\" null=\"true\" display=\"- {null}\" displayName=\"In6\" icon=\"/ord?module://icons/x16/statusNumeric.png\" unit=\"obix:units/null\">\n </real>\n <real name=\"in7\" val=\"0.0\" href=\"in7/\" is=\"/obix/def/baja:StatusNumeric\" null=\"true\" display=\"- {null}\" displayName=\"In7\" icon=\"/ord?module://icons/x16/statusNumeric.png\" unit=\"obix:units/null\">\n </real>\n <real name=\"in8\" val=\"0.0\" href=\"in8/\" is=\"/obix/def/baja:StatusNumeric\" null=\"true\" display=\"- {null}\" displayName=\"In8\" icon=\"/ord?module://icons/x16/statusNumeric.png\" unit=\"obix:units/null\">\n </real>\n <real name=\"in9\" val=\"0.0\" href=\"in9/\" is=\"/obix/def/baja:StatusNumeric\" null=\"true\" display=\"- {null}\" displayName=\"In9\" icon=\"/ord?module://icons/x16/statusNumeric.png\" unit=\"obix:units/null\">\n </real>\n <real name=\"in10\" val=\"0.0\" href=\"in10/\" is=\"/obix/def/baja:StatusNumeric\" null=\"true\" display=\"- {null}\" displayName=\"In10\" icon=\"/ord?module://icons/x16/statusNumeric.png\" unit=\"obix:units/null\">\n </real>\n <real name=\"in11\" val=\"0.0\" href=\"in11/\" is=\"/obix/def/baja:StatusNumeric\" null=\"true\" display=\"- {null}\" displayName=\"In11\" icon=\"/ord?module://icons/x16/statusNumeric.png\" unit=\"obix:units/null\">\n </real>\n <real name=\"in12\" val=\"0.0\" href=\"in12/\" is=\"/obix/def/baja:StatusNumeric\" null=\"true\" display=\"- {null}\" displayName=\"In12\" icon=\"/ord?module://icons/x16/statusNumeric.png\" unit=\"obix:units/null\">\n </real>\n <real name=\"in13\" val=\"0.0\" href=\"in13/\" is=\"/obix/def/baja:StatusNumeric\" null=\"true\" display=\"- {null}\" displayName=\"In13\" icon=\"/ord?module://icons/x16/statusNumeric.png\" unit=\"obix:units/null\">\n </real>\n <real name=\"in14\" val=\"0.0\" href=\"in14/\" is=\"/obix/def/baja:StatusNumeric\" null=\"true\" display=\"- {null}\" displayName=\"In14\" icon=\"/ord?module://icons/x16/statusNumeric.png\" unit=\"obix:units/null\">\n </real>\n <real name=\"in15\" val=\"0.0\" href=\"in15/\" is=\"/obix/def/baja:StatusNumeric\" null=\"true\" display=\"- {null}\" displayName=\"In15\" icon=\"/ord?module://icons/x16/statusNumeric.png\" unit=\"obix:units/null\">\n </real>\n <real name=\"in16\" val=\"0.0\" href=\"in16/\" is=\"/obix/def/baja:StatusNumeric\" null=\"true\" display=\"- {null}\" displayName=\"In16\" icon=\"/ord?module://icons/x16/statusNumeric.png\" unit=\"obix:units/null\">\n </real>\n <real name=\"fallback\" val=\"12.45\" href=\"fallback/\" is=\"/obix/def/baja:StatusNumeric\" display=\"12.4 {ok}\" displayName=\"Fallback\" icon=\"/ord?module://icons/x16/statusNumeric.png\" unit=\"obix:units/null\">\n </real>\n <abstime name=\"overrideExpiration\" val=\"1970-01-01T08:00:00.000+08:00\" href=\"overrideExpiration/\" null=\"true\" display=\"null\" displayName=\"Override Expiration\" tz=\"Etc/GMT-8\"/>\n <op name=\"emergencyOverride\" href=\"emergencyOverride/\" in=\"obix:real\" displayName=\"Emergency Override\"/>\n <op name=\"emergencyAuto\" href=\"emergencyAuto/\" displayName=\"Emergency Auto\"/>\n <op name=\"override\" href=\"override/\" in=\"/obix/def/control:NumericOverride /obix/def/control:Override\" displayName=\"Override\"/>\n <op name=\"auto\" href=\"auto/\" displayName=\"Auto\"/>\n <op name=\"set\" href=\"set/\" in=\"obix:real\" displayName=\"Set\"/>\n</real>\n"
+						}
+					]
+				},
+				{
+					"name": "set enumwritable",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "obix",
+								"password": "!Honeywell1",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"url": "http://localhost/obix/config/examples/EnumWritable/set/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Transfer-Encoding",
+								"value": "chunked",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic b2JpeDohSG9uZXl3ZWxsMQ==",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<enum range=\"/obix/def/control:PriorityLevel/~range\" val=\"level_4\" />"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "boolean",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "admin",
+								"password": "Admin12345",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"url": "http://localhost/obix/config/examples/BooleanWritable/",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic YWRtaW46QWRtaW4xMjM0NQ==",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<reltime val=\"PT20S\" />"
+						},
+						"description": "BooleanWritable"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "alarm",
+			"description": "illustrates how to subscribe, poll for alarm changes",
+			"item": [
+				{
+					"name": "watch",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "admin",
+								"password": "Admin12345",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"url": "http://localhost/obix/watchService/make/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Transfer-Encoding",
+								"value": "chunked",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic YWRtaW46QWRtaW4xMjM0NQ==",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "create the alarm watch"
+					},
+					"response": []
+				},
+				{
+					"name": "subscribe",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "admin",
+								"password": "Admin12345",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"url": "http://localhost/obix/watchService/watch122/add/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Transfer-Encoding",
+								"value": "chunked",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic YWRtaW46QWRtaW4xMjM0NQ==",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "text/xml",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<obj is=\"obix:WatchIn\"> \r\n<list names=\"hrefs\"> \r\n<uri val=\"/obix/config/Services/AlarmService/~alarmFeed/\" /> \r\n</list> \r\n</obj>"
+						},
+						"description": "add alarm feed to the alarm watch"
+					},
+					"response": [
+						{
+							"id": "6387273e-9c8b-42dc-b69a-1e52bdfb0c27",
+							"name": "subscribe",
+							"originalRequest": {
+								"url": "http://localhost/obix/watchService/watch122/pollRefresh/",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Transfer-Encoding",
+										"value": "chunked",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Basic YWRtaW46QWRtaW4xMjM0NQ==",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "text/xml",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "<obj is=\"obix:WatchIn\"> \r\n<list names=\"hrefs\"> \r\n<uri val=\"/obix/config/Services/AlarmService/~alarmFeed/\" /> \r\n</list> \r\n</obj>"
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "xml",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"name": "accept-language",
+									"key": "accept-language",
+									"value": "en-US,en;q=0.8,zh-CN;q=0.6,zh;q=0.4",
+									"description": ""
+								},
+								{
+									"name": "cache-control",
+									"key": "cache-control",
+									"value": "private, must-revalidate",
+									"description": ""
+								},
+								{
+									"name": "content-encoding",
+									"key": "content-encoding",
+									"value": "gzip",
+									"description": ""
+								},
+								{
+									"name": "content-type",
+									"key": "content-type",
+									"value": "text/xml; charset=UTF-8",
+									"description": ""
+								},
+								{
+									"name": "date",
+									"key": "date",
+									"value": "Tue, 26 Sep 2017 08:35:10 GMT",
+									"description": ""
+								},
+								{
+									"name": "expires",
+									"key": "expires",
+									"value": "Thu, 01 Jan 1970 00:00:00 GMT",
+									"description": ""
+								},
+								{
+									"name": "server",
+									"key": "server",
+									"value": "Niagara Web Server/3.8.111",
+									"description": ""
+								},
+								{
+									"name": "transfer-encoding",
+									"key": "transfer-encoding",
+									"value": "chunked",
+									"description": ""
+								},
+								{
+									"name": "x-frame-options",
+									"key": "x-frame-options",
+									"value": "sameorigin",
+									"description": ""
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date",
+									"hostOnly": true,
+									"httpOnly": false,
+									"domain": "localhost",
+									"path": "/",
+									"secure": false,
+									"session": true,
+									"value": "false",
+									"key": "niagara_login_state_data"
+								},
+								{
+									"expires": "Invalid Date",
+									"hostOnly": true,
+									"httpOnly": false,
+									"domain": "localhost",
+									"path": "/",
+									"secure": false,
+									"session": true,
+									"value": "systemAdmin",
+									"key": "vrf_user_type"
+								},
+								{
+									"expires": "Invalid Date",
+									"hostOnly": true,
+									"httpOnly": false,
+									"domain": "localhost",
+									"path": "/",
+									"secure": false,
+									"session": true,
+									"value": "en",
+									"key": "vrf_user_locale"
+								},
+								{
+									"expires": "Invalid Date",
+									"hostOnly": true,
+									"httpOnly": false,
+									"domain": "localhost",
+									"path": "/",
+									"secure": false,
+									"session": true,
+									"value": "s4d5af52f819635e4ec08f45d233e7f694f34289f2dbf3b4c68",
+									"key": "niagara_session"
+								}
+							],
+							"responseTime": 66,
+							"body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<?xml-stylesheet type='text/xsl' href='/obix/xsl'?>\n<obj is=\"obix:WatchOut\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://obix.org/ns/schema/1.0 /obix/xsd\" xmlns=\"http://obix.org/ns/schema/1.0\">\n <list name=\"values\" of=\"obix:obj\">\n  <feed name=\"feed\" href=\"/obix/config/Services/AlarmService/~alarmFeed/\" of=\"obix:Alarm\" in=\"obix:AlarmFilter\">\n  </feed>\n </list>\n</obj>\n"
+						}
+					]
+				},
+				{
+					"name": "pollRefresh",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "admin",
+								"password": "Admin12345",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"url": "http://localhost/obix/watchService/watch122/pollRefresh/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Transfer-Encoding",
+								"value": "chunked",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic YWRtaW46QWRtaW4xMjM0NQ==",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": [
+						{
+							"id": "d810ef89-b217-411f-a6ce-ff4b8956d645",
+							"name": "pollRefresh",
+							"originalRequest": {
+								"url": "http://localhost/obix/watchService/watch122/pollRefresh/",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Transfer-Encoding",
+										"value": "chunked",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"name": "Authorization",
+										"value": "Basic YWRtaW46QWRtaW4xMjM0NQ==",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "xml",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"name": "accept-language",
+									"key": "accept-language",
+									"value": "en-US,en;q=0.8,zh-CN;q=0.6,zh;q=0.4",
+									"description": "Custom header"
+								},
+								{
+									"name": "cache-control",
+									"key": "cache-control",
+									"value": "private, must-revalidate",
+									"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+								},
+								{
+									"name": "content-encoding",
+									"key": "content-encoding",
+									"value": "gzip",
+									"description": "The type of encoding used on the data."
+								},
+								{
+									"name": "content-type",
+									"key": "content-type",
+									"value": "text/xml; charset=UTF-8",
+									"description": "The mime type of this content"
+								},
+								{
+									"name": "date",
+									"key": "date",
+									"value": "Tue, 26 Sep 2017 08:39:12 GMT",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"name": "expires",
+									"key": "expires",
+									"value": "Thu, 01 Jan 1970 00:00:00 GMT",
+									"description": "Gives the date/time after which the response is considered stale"
+								},
+								{
+									"name": "server",
+									"key": "server",
+									"value": "Niagara Web Server/3.8.111",
+									"description": "A name for the server"
+								},
+								{
+									"name": "transfer-encoding",
+									"key": "transfer-encoding",
+									"value": "chunked",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"name": "x-frame-options",
+									"key": "x-frame-options",
+									"value": "sameorigin",
+									"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date",
+									"hostOnly": true,
+									"httpOnly": false,
+									"domain": "localhost",
+									"path": "/",
+									"secure": false,
+									"session": true,
+									"value": "false",
+									"key": "niagara_login_state_data"
+								},
+								{
+									"expires": "Invalid Date",
+									"hostOnly": true,
+									"httpOnly": false,
+									"domain": "localhost",
+									"path": "/",
+									"secure": false,
+									"session": true,
+									"value": "systemAdmin",
+									"key": "vrf_user_type"
+								},
+								{
+									"expires": "Invalid Date",
+									"hostOnly": true,
+									"httpOnly": false,
+									"domain": "localhost",
+									"path": "/",
+									"secure": false,
+									"session": true,
+									"value": "en",
+									"key": "vrf_user_locale"
+								},
+								{
+									"expires": "Invalid Date",
+									"hostOnly": true,
+									"httpOnly": false,
+									"domain": "localhost",
+									"path": "/",
+									"secure": false,
+									"session": true,
+									"value": "s4d5af52f819635e4ec08f45d233e7f694f34289f2dbf3b4c68",
+									"key": "niagara_session"
+								}
+							],
+							"responseTime": 35,
+							"body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<?xml-stylesheet type='text/xsl' href='/obix/xsl'?>\n<obj is=\"obix:WatchOut\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://obix.org/ns/schema/1.0 /obix/xsd\" xmlns=\"http://obix.org/ns/schema/1.0\">\n <list name=\"values\" of=\"obix:obj\">\n  <feed name=\"feed\" href=\"/obix/config/Services/AlarmService/~alarmFeed/\" of=\"obix:Alarm\" in=\"obix:AlarmFilter\">\n   <obj href=\"/obix/alarm/539c64e3-1659-471c-a27a-abfe16056594\" is=\"obix:Alarm obix:AckAlarm obix:PointAlarm obix:StatefulAlarm\" display=\"\">\n    <op name=\"ack\" href=\"/obix/alarm/539c64e3-1659-471c-a27a-abfe16056594/ack\" in=\"obix:AlarmAckIn\" out=\"obix:AlarmAckOut\"/>\n    <ref name=\"source\" href=\"/obix/config/examples/NumericWritable/OutOfRangeAlarmExt\"/>\n    <real name=\"alarmValue\" val=\"12.45\"/>\n    <abstime name=\"timestamp\" val=\"2017-09-26T16:39:02.785+08:00\" tz=\"Etc/GMT-8\"/>\n    <str name=\"niagara-uuid\" val=\"539c64e3-1659-471c-a27a-abfe16056594\"/>\n    <int name=\"priority\" val=\"255\"/>\n    <str name=\"alarmClass\" val=\"defaultAlarmClass\"/>\n    <str name=\"presentValue\" val=\"12.4\"/>\n    <str name=\"fromState\" val=\"normal\"/>\n    <str name=\"toState\" val=\"lowLimit\"/>\n    <str name=\"lowLimit\" val=\"30.0\"/>\n    <str name=\"offnormalValue\" val=\"12.4\"/>\n    <str name=\"msgText\" val=\"\"/>\n    <str name=\"deadband\" val=\"2.0\"/>\n    <str name=\"sourceName\" val=\"NumericWritable\"/>\n    <int name=\"Count\" val=\"1\"/>\n    <str name=\"highLimit\" val=\"100.0\"/>\n    <str name=\"status\" val=\"{ok} @ def\"/>\n    <str name=\"TimeZone\" val=\"Etc/GMT-8 (+8)\"/>\n    <str name=\"escalated\" val=\"\"/>\n    <str name=\"sourceStation\" val=\"demo\"/>\n   </obj>\n  </feed>\n </list>\n</obj>\n"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "lobby",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"username": "admin",
+						"password": "Admin12345",
+						"saveHelperData": true,
+						"showPassword": false
+					}
+				},
+				"url": "http://localhost/obix/",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46QWRtaW4xMjM0NQ==",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<reltime val=\"PT20S\" />"
+				},
+				"description": "oBIX entry point"
+			},
+			"response": []
+		}
+	]
+}
