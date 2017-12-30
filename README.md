@@ -1,4 +1,4 @@
-# oBIX Overview
+# Overview
 
 > oBIX is designed to provide access to the embedded software systems which sense and control the world around us.  
 > oBIX Version 1.1, Working Draft 06, 08 June 2010 
