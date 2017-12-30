@@ -30,6 +30,6 @@ All operations take exactly one object as a parameter and return exactly one obj
 I have illustrated how to invoke these operations by Postman, you can refer to [obix_intro.docx](https://github.com/hanshu/obix/blob/master/obix_intro.docx?raw=true) for detailed information.
 
 ## References
-- [obix.postman_collection.json](https://github.com/hanshu/obix/blob/master/obix.postman_collection.json)  
+- [obix.postman_collection](https://github.com/hanshu/obix/blob/master/obix.postman_collection.json)  
     I export from my Postman for your testing, and provide [Document oBIX APIs on Postman Cloud](https://documenter.getpostman.com/view/1068428/collection/6tjSf6M) for your reference.   
     
