@@ -3,7 +3,7 @@
 	"info": {
 		"name": "obix",
 		"_postman_id": "a2f2b46e-6390-c9cb-a9bf-a6713a74bec6",
-		"description": "",
+		"description": "oBIX introduction",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [
@@ -12,12 +12,46 @@
 			"description": "describes how to create one Watch, modify the least time, add objects for changes, and poll for changes",
 			"item": [
 				{
+					"name": "watchservice",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "obix",
+								"password": "Admin12345",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"url": "http://localhost/obix/watchService/",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Transfer-Encoding",
+								"value": "chunked",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic b2JpeDpBZG1pbjEyMzQ1",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "WatchService"
+					},
+					"response": []
+				},
+				{
 					"name": "defaultLeaseTime",
 					"request": {
 						"auth": {
 							"type": "basic",
 							"basic": {
-								"username": "admin",
+								"username": "obix",
 								"password": "Admin12345",
 								"saveHelperData": true,
 								"showPassword": false
@@ -28,13 +62,13 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Basic YWRtaW46QWRtaW4xMjM0NQ==",
+								"value": "Basic b2JpeDpBZG1pbjEyMzQ1",
 								"description": ""
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "<reltime val=\"PT10M\" />"
+							"raw": "<reltime val=\"PT4M\" />"
 						},
 						"description": "globally update the default least time for watchService "
 					},
@@ -46,7 +80,7 @@
 						"auth": {
 							"type": "basic",
 							"basic": {
-								"username": "admin",
+								"username": "obix",
 								"password": "Admin12345",
 								"saveHelperData": true,
 								"showPassword": false
@@ -62,7 +96,7 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "Basic YWRtaW46QWRtaW4xMjM0NQ==",
+								"value": "Basic b2JpeDpBZG1pbjEyMzQ1",
 								"description": ""
 							}
 						],
@@ -181,7 +215,7 @@
 					},
 					"response": [
 						{
-							"id": "e4a51924-9e04-41c6-8613-532a8a0e7c90",
+							"id": "50a3e284-fe3a-4219-8dcc-2b2df4a4aa5a",
 							"name": "remove",
 							"originalRequest": {
 								"url": "http://localhost/obix/watchService/watch32/remove/",
@@ -321,45 +355,6 @@
 							"body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<?xml-stylesheet type='text/xsl' href='/obix/xsl'?>\n<obj null=\"true\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://obix.org/ns/schema/1.0 /obix/xsd\" xmlns=\"http://obix.org/ns/schema/1.0\"/>\n"
 						}
 					]
-				},
-				{
-					"name": "pollChanges",
-					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": {
-								"username": "admin",
-								"password": "Admin12345",
-								"saveHelperData": true,
-								"showPassword": false
-							}
-						},
-						"url": "http://localhost/obix/watchService/watch32/pollChanges/",
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Transfer-Encoding",
-								"value": "chunked",
-								"description": ""
-							},
-							{
-								"key": "Authorization",
-								"value": "Basic YWRtaW46QWRtaW4xMjM0NQ==",
-								"description": ""
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/xml",
-								"description": ""
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"description": "pollChange"
-					},
-					"response": []
 				}
 			]
 		},
@@ -368,186 +363,7 @@
 			"description": "illustrates how to retrieve object info, invoke the operation",
 			"item": [
 				{
-					"name": "set numericwritable",
-					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": {
-								"username": "admin",
-								"password": "Admin12345",
-								"saveHelperData": true,
-								"showPassword": false
-							}
-						},
-						"url": "http://localhost/obix/config/examples/NumericWritable/set/",
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Transfer-Encoding",
-								"value": "chunked",
-								"description": ""
-							},
-							{
-								"key": "Authorization",
-								"value": "Basic YWRtaW46QWRtaW4xMjM0NQ==",
-								"description": ""
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/xml",
-								"description": ""
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "<real val=\"12.45\" />"
-						},
-						"description": "set point"
-					},
-					"response": [
-						{
-							"id": "d5736ee6-9037-4b4d-a62b-d96723240593",
-							"name": "set",
-							"originalRequest": {
-								"url": "http://localhost/obix/config/examples/NumericWritable/set/",
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Transfer-Encoding",
-										"value": "chunked",
-										"description": ""
-									},
-									{
-										"key": "Authorization",
-										"type": "text",
-										"name": "Authorization",
-										"value": "Basic YWRtaW46QWRtaW4xMjM0NQ==",
-										"description": ""
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/xml",
-										"description": ""
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "<real val=\"12.45\" />"
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "xml",
-							"_postman_previewtype": "text",
-							"header": [
-								{
-									"name": "accept-language",
-									"key": "accept-language",
-									"value": "en-US,en;q=0.8,zh-CN;q=0.6,zh;q=0.4",
-									"description": "Custom header"
-								},
-								{
-									"name": "cache-control",
-									"key": "cache-control",
-									"value": "private, must-revalidate",
-									"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
-								},
-								{
-									"name": "content-encoding",
-									"key": "content-encoding",
-									"value": "gzip",
-									"description": "The type of encoding used on the data."
-								},
-								{
-									"name": "content-type",
-									"key": "content-type",
-									"value": "text/xml; charset=UTF-8",
-									"description": "The mime type of this content"
-								},
-								{
-									"name": "date",
-									"key": "date",
-									"value": "Tue, 26 Sep 2017 08:10:49 GMT",
-									"description": "The date and time that the message was sent"
-								},
-								{
-									"name": "expires",
-									"key": "expires",
-									"value": "Thu, 01 Jan 1970 00:00:00 GMT",
-									"description": "Gives the date/time after which the response is considered stale"
-								},
-								{
-									"name": "server",
-									"key": "server",
-									"value": "Niagara Web Server/3.8.111",
-									"description": "A name for the server"
-								},
-								{
-									"name": "transfer-encoding",
-									"key": "transfer-encoding",
-									"value": "chunked",
-									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
-								},
-								{
-									"name": "x-frame-options",
-									"key": "x-frame-options",
-									"value": "sameorigin",
-									"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
-								}
-							],
-							"cookie": [
-								{
-									"expires": "Invalid Date",
-									"hostOnly": true,
-									"httpOnly": false,
-									"domain": "localhost",
-									"path": "/",
-									"secure": false,
-									"session": true,
-									"value": "false",
-									"key": "niagara_login_state_data"
-								},
-								{
-									"expires": "Invalid Date",
-									"hostOnly": true,
-									"httpOnly": false,
-									"domain": "localhost",
-									"path": "/",
-									"secure": false,
-									"session": true,
-									"value": "systemAdmin",
-									"key": "vrf_user_type"
-								},
-								{
-									"expires": "Invalid Date",
-									"hostOnly": true,
-									"httpOnly": false,
-									"domain": "localhost",
-									"path": "/",
-									"secure": false,
-									"session": true,
-									"value": "en",
-									"key": "vrf_user_locale"
-								},
-								{
-									"expires": "Invalid Date",
-									"hostOnly": true,
-									"httpOnly": false,
-									"domain": "localhost",
-									"path": "/",
-									"secure": false,
-									"session": true,
-									"value": "s4d5af52f819635e4ec08f45d233e7f694f34289f2dbf3b4c68",
-									"key": "niagara_session"
-								}
-							],
-							"responseTime": 57,
-							"body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<?xml-stylesheet type='text/xsl' href='/obix/xsl'?>\n<real val=\"12.45\" is=\"/obix/def/control:NumericWritable /obix/def/control:NumericPoint obix:Point\" display=\"12.4 {ok} @ def\" icon=\"/ord?module://icons/x16/control/numericPoint.png\" unit=\"obix:units/null\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://obix.org/ns/schema/1.0 /obix/xsd\" xmlns=\"http://obix.org/ns/schema/1.0\">\n <str name=\"facets\" val=\"units=u:null;;;;|precision=i:1|min=d:-inf|max=d:+inf\" href=\"facets/\" display=\"units=null,precision=1,min=-inf,max=+inf\" displayName=\"Facets\" writable=\"true\"/>\n <ref name=\"proxyExt\" href=\"proxyExt/\" is=\"/obix/def/control:NullProxyExt\" null=\"true\" display=\"null\" displayName=\"Proxy Ext\" icon=\"/ord?module://icons/x16/control/controlExtension.png\"/>\n <real name=\"out\" val=\"12.45\" href=\"out/\" is=\"/obix/def/baja:StatusNumeric\" display=\"12.4 {ok} @ def\" displayName=\"Out\" icon=\"/ord?module://icons/x16/statusNumeric.png\" unit=\"obix:units/null\">\n </real>\n <real name=\"in1\" val=\"0.0\" href=\"in1/\" is=\"/obix/def/baja:StatusNumeric\" null=\"true\" display=\"- {null}\" displayName=\"In1\" icon=\"/ord?module://icons/x16/statusNumeric.png\" unit=\"obix:units/null\">\n </real>\n <real name=\"in2\" val=\"0.0\" href=\"in2/\" is=\"/obix/def/baja:StatusNumeric\" null=\"true\" display=\"- {null}\" displayName=\"In2\" icon=\"/ord?module://icons/x16/statusNumeric.png\" unit=\"obix:units/null\">\n </real>\n <real name=\"in3\" val=\"0.0\" href=\"in3/\" is=\"/obix/def/baja:StatusNumeric\" null=\"true\" display=\"- {null}\" displayName=\"In3\" icon=\"/ord?module://icons/x16/statusNumeric.png\" unit=\"obix:units/null\">\n </real>\n <real name=\"in4\" val=\"0.0\" href=\"in4/\" is=\"/obix/def/baja:StatusNumeric\" null=\"true\" display=\"- {null}\" displayName=\"In4\" icon=\"/ord?module://icons/x16/statusNumeric.png\" unit=\"obix:units/null\">\n </real>\n <real name=\"in5\" val=\"0.0\" href=\"in5/\" is=\"/obix/def/baja:StatusNumeric\" null=\"true\" display=\"- {null}\" displayName=\"In5\" icon=\"/ord?module://icons/x16/statusNumeric.png\" unit=\"obix:units/null\">\n </real>\n <real name=\"in6\" val=\"0.0\" href=\"in6/\" is=\"/obix/def/baja:StatusNumeric\" null=\"true\" display=\"- {null}\" displayName=\"In6\" icon=\"/ord?module://icons/x16/statusNumeric.png\" unit=\"obix:units/null\">\n </real>\n <real name=\"in7\" val=\"0.0\" href=\"in7/\" is=\"/obix/def/baja:StatusNumeric\" null=\"true\" display=\"- {null}\" displayName=\"In7\" icon=\"/ord?module://icons/x16/statusNumeric.png\" unit=\"obix:units/null\">\n </real>\n <real name=\"in8\" val=\"0.0\" href=\"in8/\" is=\"/obix/def/baja:StatusNumeric\" null=\"true\" display=\"- {null}\" displayName=\"In8\" icon=\"/ord?module://icons/x16/statusNumeric.png\" unit=\"obix:units/null\">\n </real>\n <real name=\"in9\" val=\"0.0\" href=\"in9/\" is=\"/obix/def/baja:StatusNumeric\" null=\"true\" display=\"- {null}\" displayName=\"In9\" icon=\"/ord?module://icons/x16/statusNumeric.png\" unit=\"obix:units/null\">\n </real>\n <real name=\"in10\" val=\"0.0\" href=\"in10/\" is=\"/obix/def/baja:StatusNumeric\" null=\"true\" display=\"- {null}\" displayName=\"In10\" icon=\"/ord?module://icons/x16/statusNumeric.png\" unit=\"obix:units/null\">\n </real>\n <real name=\"in11\" val=\"0.0\" href=\"in11/\" is=\"/obix/def/baja:StatusNumeric\" null=\"true\" display=\"- {null}\" displayName=\"In11\" icon=\"/ord?module://icons/x16/statusNumeric.png\" unit=\"obix:units/null\">\n </real>\n <real name=\"in12\" val=\"0.0\" href=\"in12/\" is=\"/obix/def/baja:StatusNumeric\" null=\"true\" display=\"- {null}\" displayName=\"In12\" icon=\"/ord?module://icons/x16/statusNumeric.png\" unit=\"obix:units/null\">\n </real>\n <real name=\"in13\" val=\"0.0\" href=\"in13/\" is=\"/obix/def/baja:StatusNumeric\" null=\"true\" display=\"- {null}\" displayName=\"In13\" icon=\"/ord?module://icons/x16/statusNumeric.png\" unit=\"obix:units/null\">\n </real>\n <real name=\"in14\" val=\"0.0\" href=\"in14/\" is=\"/obix/def/baja:StatusNumeric\" null=\"true\" display=\"- {null}\" displayName=\"In14\" icon=\"/ord?module://icons/x16/statusNumeric.png\" unit=\"obix:units/null\">\n </real>\n <real name=\"in15\" val=\"0.0\" href=\"in15/\" is=\"/obix/def/baja:StatusNumeric\" null=\"true\" display=\"- {null}\" displayName=\"In15\" icon=\"/ord?module://icons/x16/statusNumeric.png\" unit=\"obix:units/null\">\n </real>\n <real name=\"in16\" val=\"0.0\" href=\"in16/\" is=\"/obix/def/baja:StatusNumeric\" null=\"true\" display=\"- {null}\" displayName=\"In16\" icon=\"/ord?module://icons/x16/statusNumeric.png\" unit=\"obix:units/null\">\n </real>\n <real name=\"fallback\" val=\"12.45\" href=\"fallback/\" is=\"/obix/def/baja:StatusNumeric\" display=\"12.4 {ok}\" displayName=\"Fallback\" icon=\"/ord?module://icons/x16/statusNumeric.png\" unit=\"obix:units/null\">\n </real>\n <abstime name=\"overrideExpiration\" val=\"1970-01-01T08:00:00.000+08:00\" href=\"overrideExpiration/\" null=\"true\" display=\"null\" displayName=\"Override Expiration\" tz=\"Etc/GMT-8\"/>\n <op name=\"emergencyOverride\" href=\"emergencyOverride/\" in=\"obix:real\" displayName=\"Emergency Override\"/>\n <op name=\"emergencyAuto\" href=\"emergencyAuto/\" displayName=\"Emergency Auto\"/>\n <op name=\"override\" href=\"override/\" in=\"/obix/def/control:NumericOverride /obix/def/control:Override\" displayName=\"Override\"/>\n <op name=\"auto\" href=\"auto/\" displayName=\"Auto\"/>\n <op name=\"set\" href=\"set/\" in=\"obix:real\" displayName=\"Set\"/>\n</real>\n"
-						}
-					]
-				},
-				{
-					"name": "set enumwritable",
+					"name": "boolean",
 					"request": {
 						"auth": {
 							"type": "basic",
@@ -558,14 +374,9 @@
 								"showPassword": false
 							}
 						},
-						"url": "http://localhost/obix/config/examples/EnumWritable/set/",
-						"method": "POST",
+						"url": "http://localhost/obix/config/PointDriver/PRO1_LIGHT/out/",
+						"method": "GET",
 						"header": [
-							{
-								"key": "Content-Transfer-Encoding",
-								"value": "chunked",
-								"description": ""
-							},
 							{
 								"key": "Authorization",
 								"value": "Basic b2JpeDohSG9uZXl3ZWxsMQ==",
@@ -574,30 +385,30 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "<enum range=\"/obix/def/control:PriorityLevel/~range\" val=\"level_4\" />"
+							"raw": "<reltime val=\"PT20S\" />"
 						},
-						"description": ""
+						"description": "BooleanWritable"
 					},
 					"response": []
 				},
 				{
-					"name": "boolean",
+					"name": "numericpoint",
 					"request": {
 						"auth": {
 							"type": "basic",
 							"basic": {
-								"username": "admin",
+								"username": "obix",
 								"password": "Admin12345",
 								"saveHelperData": true,
 								"showPassword": false
 							}
 						},
-						"url": "http://localhost/obix/config/examples/BooleanWritable/",
+						"url": "https://localhost/obix/config/Floor/thermostat/",
 						"method": "GET",
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Basic YWRtaW46QWRtaW4xMjM0NQ==",
+								"value": "Basic b2JpeDpBZG1pbjEyMzQ1",
 								"description": ""
 							}
 						],
@@ -605,7 +416,41 @@
 							"mode": "raw",
 							"raw": "<reltime val=\"PT20S\" />"
 						},
-						"description": "BooleanWritable"
+						"description": "NumericWritable"
+					},
+					"response": []
+				},
+				{
+					"name": "set booleanwritable",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "obix",
+								"password": "!Honeywell1",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"url": "http://localhost/obix/config/PointDriver/PRO1_LIGHT/set/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic b2JpeDohSG9uZXl3ZWxsMQ==",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/xml",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<bool val='false'/>"
+						},
+						"description": ""
 					},
 					"response": []
 				}
@@ -688,7 +533,7 @@
 					},
 					"response": [
 						{
-							"id": "6387273e-9c8b-42dc-b69a-1e52bdfb0c27",
+							"id": "4170cd45-79e1-47ea-9478-ec9cca6e97ac",
 							"name": "subscribe",
 							"originalRequest": {
 								"url": "http://localhost/obix/watchService/watch122/pollRefresh/",
@@ -860,7 +705,7 @@
 					},
 					"response": [
 						{
-							"id": "d810ef89-b217-411f-a6ce-ff4b8956d645",
+							"id": "b1cdc052-527a-4917-9706-80802574865c",
 							"name": "pollRefresh",
 							"originalRequest": {
 								"url": "http://localhost/obix/watchService/watch122/pollRefresh/",
@@ -998,23 +843,281 @@
 			]
 		},
 		{
+			"name": "batch",
+			"description": "Batching multiple requests together can often provide significant performance improvements over individual round-robin network requests.",
+			"item": [
+				{
+					"name": "batch",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "obix",
+								"password": "Admin12345",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"url": "http://localhost/obix/batch/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Transfer-Encoding",
+								"value": "chunked",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic b2JpeDpBZG1pbjEyMzQ1",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<list is=\"obix:BatchIn\"> \r\n  <uri is=\"obix:Read\" val=\"http://localhost/obix/config/Floor/thermostat/out\" />\r\n  <uri is=\"obix:Invoke\" val=\"http://localhost/obix/config/Floor/sp/set\">\r\n    <bool name=\"in\" val=\"true\" />\r\n  </uri>\r\n  <uri is=\"obix:Invoke\" val=\"http://localhost/obix/config/Floor/thermostat/set\">\r\n    <real name=\"in\" val=\"35\" />\r\n  </uri>    \r\n</list>"
+						},
+						"description": "create the watch"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "history",
+			"description": "This feature goes by many names including logs, trends, or histories. In oBIX, a history is defined as a list of time stamped point values.",
+			"item": [
+				{
+					"name": "query",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "obix",
+								"password": "Admin12345",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"url": "http://localhost/obix/histories/obix/LogHistory/~historyQuery/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Transfer-Encoding",
+								"value": "chunked",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic b2JpeDpBZG1pbjEyMzQ1",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/xml",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<obj is=\"obix:HistoryFilter\">\r\n  <int name=\"limit\" val=\"10\" />\r\n  <abstime name=\"start\" val=\"2018-04-25T09:51:15.062Z\"/>\r\n  <abstime name=\"end\" val=\"2018-11-19T09:01:14.062Z\"/>\r\n</obj>"
+						},
+						"description": "history query"
+					},
+					"response": [
+						{
+							"id": "ab0b2c4a-0a76-4e9d-97c7-a87c1e6173b1",
+							"name": "historyquery",
+							"originalRequest": {
+								"url": "http://localhost/obix/histories/obix/LogHistory/~historyQuery/",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Transfer-Encoding",
+										"value": "chunked",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"name": "Authorization",
+										"value": "Basic b2JpeDpBZG1pbjEyMzQ1",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/xml",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "<obj is=\"obix:HistoryFilter\">\r\n  <int name=\"limit\" val=\"10\" />\r\n  <abstime name=\"start\" val=\"2018-04-25T09:51:15.062Z\"/>\r\n  <abstime name=\"end\" val=\"2018-11-19T09:01:14.062Z\"/>\r\n</obj>"
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "xml",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"name": "content-type",
+									"key": "content-type",
+									"value": "text/xml",
+									"description": "The mime type of this content"
+								},
+								{
+									"name": "expires",
+									"key": "expires",
+									"value": "Thu, 01 Jan 1970 00:00:00 GMT",
+									"description": "Gives the date/time after which the response is considered stale"
+								},
+								{
+									"name": "transfer-encoding",
+									"key": "transfer-encoding",
+									"value": "chunked",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"name": "x-frame-options",
+									"key": "x-frame-options",
+									"value": "sameorigin",
+									"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+								}
+							],
+							"cookie": [],
+							"responseTime": 42,
+							"body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<?xml-stylesheet type='text/xsl' href='/obix/xsl'?>\n<obj href=\"http://localhost/obix/histories/obix/LogHistory/~historyQuery/\" is=\"obix:HistoryQueryOut\" xmlns=\"http://obix.org/ns/schema/1.0\" xsi:schemaLocation=\"http://obix.org/ns/schema/1.0 /obix/xsd\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n <list name=\"data\" of=\"#RecordDef obix:HistoryRecord\">\n  <obj>\n   <abstime name=\"timestamp\" val=\"2018-05-08T11:26:54.392+08:00\" tz=\"Asia/Shanghai\"/>\n   <str name=\"value\" val=\"08-May-18 11:26 AM CST[INFO]Updated [0ms]\"/>\n  </obj>\n  <obj>\n   <abstime name=\"timestamp\" val=\"2018-05-08T11:26:56.497+08:00\" tz=\"Asia/Shanghai\"/>\n   <str name=\"value\" val=\"08-May-18 11:26 AM CST[INFO]Jetty web server started on HTTPS port 443\"/>\n  </obj>\n  <obj>\n   <abstime name=\"timestamp\" val=\"2018-05-08T11:26:57.190+08:00\" tz=\"Asia/Shanghai\"/>\n   <str name=\"value\" val=\"08-May-18 11:26 AM CST[INFO]Niagara Runtime Environment: 4.4.73.24\"/>\n  </obj>\n  <obj>\n   <abstime name=\"timestamp\" val=\"2018-05-08T11:26:57.191+08:00\" tz=\"Asia/Shanghai\"/>\n   <str name=\"value\" val=\"08-May-18 11:26 AM CST[INFO]*** Station Started (5375ms) [26799ms total] ***\"/>\n  </obj>\n  <obj>\n   <abstime name=\"timestamp\" val=\"2018-05-08T11:26:57.286+08:00\" tz=\"Asia/Shanghai\"/>\n   <str name=\"value\" val=\"08-May-18 11:26 AM CST[INFO]FOXS server started on port [4911]\"/>\n  </obj>\n  <obj>\n   <abstime name=\"timestamp\" val=\"2018-05-08T12:18:53.752+08:00\" tz=\"Asia/Shanghai\"/>\n   <str name=\"value\" val=\"08-May-18 12:18 PM CST[INFO]Opened: 18352a2a9a3290798673d1bb0e643f4c3bd3e0c8fa67d107ce &lt;- 58f08ddcbbe81f27b06362ee42c8d6275e9dc5c5cd652d64cb :: Workbench @ CH5OLT6NZ68H2.global.ds.honeywell.com\"/>\n  </obj>\n  <obj>\n   <abstime name=\"timestamp\" val=\"2018-05-08T12:27:07.538+08:00\" tz=\"Asia/Shanghai\"/>\n   <str name=\"value\" val=\"08-May-18 12:27 PM CST[INFO]Saving station...\"/>\n  </obj>\n  <obj>\n   <abstime name=\"timestamp\" val=\"2018-05-08T12:27:07.937+08:00\" tz=\"Asia/Shanghai\"/>\n   <str name=\"value\" val=\"08-May-18 12:27 PM CST[INFO]Saved C:\\ProgramData\\Niagara4.4\\tridium\\stations\\obix\\config.bog (390ms)\"/>\n  </obj>\n  <obj>\n   <abstime name=\"timestamp\" val=\"2018-05-08T12:56:42.130+08:00\" tz=\"Asia/Shanghai\"/>\n   <str name=\"value\" val=\"08-May-18 12:56 PM CST[INFO]Closed: 18352a2a9a3290798673d1bb0e643f4c3bd3e0c8fa67d107ce &lt;- 58f08ddcbbe81f27b06362ee42c8d6275e9dc5c5cd652d64cb :: Workbench @ CH5OLT6NZ68H2.global.ds.honeywell.com\"/>\n  </obj>\n  <obj>\n   <abstime name=\"timestamp\" val=\"2018-05-08T13:27:07.567+08:00\" tz=\"Asia/Shanghai\"/>\n   <str name=\"value\" val=\"08-May-18 1:27 PM CST[INFO]Saving station...\"/>\n  </obj>\n <err href=\"#RecordDef\" display=\"java.lang.NullPointerException\"/>\n"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "export",
+			"description": "",
+			"item": [
+				{
+					"name": "obix export get",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "admin",
+								"password": "Admin12345",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"url": "http://localhost/obix/config/Drivers/ObixNetwork/exports/EnumWritable/",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Transfer-Encoding",
+								"value": "chunked",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic YWRtaW46QWRtaW4xMjM0NQ==",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "numeric sp",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "admin",
+								"password": "Admin12345",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"url": "http://localhost/obix/config/Drivers/ObixNetwork/exports/NumericWritable/writePoint/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Transfer-Encoding",
+								"value": "chunked",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic YWRtaW46QWRtaW4xMjM0NQ==",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<real val=\"67.8\"/>"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "enum sp",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "admin",
+								"password": "Admin12345",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"url": "http://localhost/obix/config/Drivers/ObixNetwork/exports/EnumWritable/writePoint/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Transfer-Encoding",
+								"value": "chunked",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic YWRtaW46QWRtaW4xMjM0NQ==",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<enum val=\"tlsv1_1\" null=\"true\" />"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "lobby",
 			"request": {
 				"auth": {
 					"type": "basic",
 					"basic": {
-						"username": "admin",
+						"username": "obix",
 						"password": "Admin12345",
 						"saveHelperData": true,
 						"showPassword": false
 					}
 				},
-				"url": "http://localhost/obix/",
+				"url": "https://localhost/obix/",
 				"method": "GET",
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Basic YWRtaW46QWRtaW4xMjM0NQ==",
+						"value": "Basic b2JpeDpBZG1pbjEyMzQ1",
 						"description": ""
 					}
 				],
@@ -1023,6 +1126,93 @@
 					"raw": "<reltime val=\"PT20S\" />"
 				},
 				"description": "oBIX entry point"
+			},
+			"response": [
+				{
+					"id": "8bda54c6-cefe-4a72-91f6-3ef6c2fad5a4",
+					"name": "lobby",
+					"originalRequest": {
+						"url": "https://localhost/obix/",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"name": "Authorization",
+								"value": "Basic b2JpeDpBZG1pbjEyMzQ1",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<reltime val=\"PT20S\" />"
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "xml",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"name": "content-type",
+							"key": "content-type",
+							"value": "text/xml",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "expires",
+							"key": "expires",
+							"value": "Thu, 01 Jan 1970 00:00:00 GMT",
+							"description": "Gives the date/time after which the response is considered stale"
+						},
+						{
+							"name": "strict-transport-security",
+							"key": "strict-transport-security",
+							"value": "max-age=15552000",
+							"description": "A HSTS Policy informing the HTTP client how long to cache the HTTPS only policy and whether this applies to subdomains."
+						},
+						{
+							"name": "transfer-encoding",
+							"key": "transfer-encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"name": "x-frame-options",
+							"key": "x-frame-options",
+							"value": "sameorigin",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						}
+					],
+					"cookie": [],
+					"responseTime": 101,
+					"body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<?xml-stylesheet type='text/xsl' href='/obix/xsl'?>\n<obj href=\"https://localhost/obix/\" is=\"obix:Lobby\" xmlns=\"http://obix.org/ns/schema/1.0\" xsi:schemaLocation=\"http://obix.org/ns/schema/1.0 /obix/xsd\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n <ref name=\"watchService\" href=\"watchService/\" is=\"obix:WatchService\"/>\n <ref name=\"config\" href=\"/obix/config/\" is=\"/obix/def/baja:Station\" display=\"Station\" displayName=\"Config\" icon=\"/ord?module://icons/x16/navOnly/systemDbService.png\"/>\n <ref name=\"about\" href=\"about/\" is=\"obix:About\"/>\n <ref name=\"histories\" href=\"histories/\" display=\"com.tridium.history.db.BLocalHistoryDatabase\" displayName=\"History\" icon=\"/ord?module://icons/x16/historyDatabase.png\"/>\n <ref name=\"continuousControl\" href=\"/obix/config/Drivers/ObixNetwork/exports\" is=\"/obix/def/obixDriver:ObixExportFolder /obix/def/baja:Folder\" display=\"Obix Export Folder\" displayName=\"Exports\" icon=\"/ord?module://icons/x16/folder.png\"/>\n <op name=\"batch\" href=\"batch/\" in=\"obix:BatchIn\" out=\"obix:BatchOut\"/>\n <ref name=\"alarms\" href=\"/obix/config/Services/AlarmService\" is=\"/obix/def/alarm:AlarmService obix:AlarmSubject\" display=\"Alarm Service\" displayName=\"AlarmService\" icon=\"/ord?module://icons/x16/navOnly/alarmService.png\"/>\n</obj>\n"
+				}
+			]
+		},
+		{
+			"name": "xsd",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"username": "obix",
+						"password": "Admin12345",
+						"saveHelperData": true,
+						"showPassword": false
+					}
+				},
+				"url": "http://localhost/obix/xsd",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic b2JpeDpBZG1pbjEyMzQ1",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "XML Schema (XSD) for oBIX"
 			},
 			"response": []
 		}
