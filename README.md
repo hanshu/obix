@@ -31,5 +31,4 @@ I have illustrated how to invoke these operations by Postman, you can refer to [
 
 ## References
 - [obix.postman_collection](https://github.com/hanshu/obix/blob/master/obix.postman_collection.json)  
-    I export from my Postman for your testing, and provide [Document oBIX APIs on Postman Cloud](https://documenter.getpostman.com/view/1068428/RW1hhFhh) for your reference.
-    
+    I export from my Postman for your testing, and provide [Document oBIX APIs on Postman Cloud](https://documenter.getpostman.com/view/1068428/S1LpaXea) for your reference.
